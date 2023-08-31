@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  h2 {
+    @apply text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@layer components {
+
+  .personal-suggestion {
+    @apply absolute left-[5rem] top-[7rem] w-[90rem] bg-slate-100 invisible grid grid-cols-3 py-10 px-3 transition-all delay-100;
+  }
+
+  :hover.personal .personal-suggestion {
+    @apply visible;
+  }
+
+  .business-suggestion {
+    @apply absolute left-[5rem] top-[7rem] w-[90rem] bg-slate-100 invisible grid grid-cols-3 py-10 px-3 transition-all delay-100;
+  }
+
+  :hover.business .business-suggestion {
+    @apply visible;
+  }
+
+  .register {
+    position: relative;
+  }
+
+  .register-suggestion {
+    @apply flex flex-col justify-center invisible absolute w-[25rem] top-[120%] left-[50%] -translate-x-[50%] font-[400] text-[1.5rem] px-[0.5rem] rounded-2xl border-2 bg-white transition-all delay-100;
+  }
+
+  :hover.register .register-suggestion {
+    @apply visible;
+  }
+
+  .login {
+    position: relative;
+  }
+
+  .login-suggestion {
+    @apply flex flex-col invisible justify-center absolute w-[20rem] top-[120%] -left-[20%] font-[400] text-[1.5rem] px-[0.5rem] rounded-2xl border-2 bg-white transition-all delay-100;
+  }
+
+  :hover.login .login-suggestion {
+    @apply visible;
+  }
+
+  .overflow_hide {
+    @apply overflow-hidden;
+  }
+
+  .backdrop {
+    @apply fixed left-0 top-0 w-[100vw] h-[100vh] z-30 bg-black bg-opacity-80;
+  }
+
+}

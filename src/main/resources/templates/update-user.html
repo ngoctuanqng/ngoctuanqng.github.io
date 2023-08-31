@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/output.css" th:href="@{/css/output.css}">
+</head>
+<body>
+<div class="flex justify-center items-center border-2 text-[1.5rem] h-[100vh]">
+    <div class="flex flex-col items-start h-[45rem] w-[35rem] max-[320px]:w-[28rem]">
+        <h2 class="bg-[#1732B8] w-full h-[5rem] flex items-center justify-center pl-[1rem] rounded-t-[1rem] text-white">Update User Info</h2>
+        <form action="#" th:action="@{/user/update}" method="POST" class="flex flex-col justify-around items-start py-[3rem] h-full pl-[1rem] bg-green-600 w-full rounded-b-[1rem]">
+            <input type="hidden" name="id" th:value="${id}">
+            <input type="hidden" name="authority" th:value="${authority}">
+            <input type="hidden" name="enabled" th:value="${enabled}">
+            <div class="flex">
+                <label for="user_name" class="min-w-[13rem] text-[1.8rem] max-[320px]:text-[1.5rem] max-[320px]:min-w-[11rem]">Email:</label>
+                <input type="text" id="user_name" name="userName" th:value="${userName}" placeholder="Email..." required class="flex items-center pl-[1rem] max-[320px]:w-[15rem]"><br>
+            </div>
+
+            <div class="flex">
+                <label for="password" class="min-w-[13rem] text-[1.8rem] max-[320px]:text-[1.5rem] max-[320px]:min-w-[11rem]">Password:</label>
+                <input type="password" id="password" name="password" th:value="${password}" placeholder="Password..." required class="flex items-center pl-[1rem] max-[320px]:w-[15rem]"><br>
+            </div>
+
+            <div class="flex">
+                <label for="full_name" class="min-w-[13rem] text-[1.8rem] max-[320px]:text-[1.5rem] max-[320px]:min-w-[11rem]">Full Name:</label>
+                <input type="text" id="full_name" name="fullName" th:value="${fullName}"  placeholder="Full Name..." required class="flex items-center pl-[1rem] max-[320px]:w-[15rem]"><br>
+            </div>
+
+            <div class="flex">
+                <label for="phone_number" class="min-w-[13rem] text-[1.8rem] max-[320px]:text-[1.5rem] max-[320px]:min-w-[11rem]">Phone Number:</label>
+                <input type="text" id="phone_number" name="phoneNumber" th:value="${phoneNumber}" placeholder="Phone Number..." required class="flex items-center pl-[1rem] max-[320px]:w-[15rem]"><br>
+            </div>
+
+            <button class="bg-red-700 rounded-md text-[2.2rem] w-[10rem] text-white hover:text-yellow-400" type="submit"
+            onclick="if (confirm('Are you want to update user information?')) return true">
+                Update
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

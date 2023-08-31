@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="..\static\css\output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <body>
+        <div th:fragment="header" class="px-12 py-3 flex items-center justify-between bg-[#008C44] text-white text-[1.5rem] h-[40px] w-full max-[1024px]:hidden">
+            <div class='flex items-center shrink-0 mr-[4rem]'>
+                <a href='#' class='hover:text-orange-400'>
+                    <div class='mr-[1.5rem]'>Tin tức - Sự kiện</div>
+                </a>
+                <div class='mr-[1.5rem] text-[16px]'>|</div>
+                <a href='#' class='hover:text-orange-400'>
+                    <div class='mr-[1.5rem]'>Cơ hội và nghề nghiệp</div>
+                </a>
+                <div class='mr-[1.5rem] text-[16px]'>|</div>
+                <a href='#' class='hover:text-orange-400'>
+                    <div class='mr-[1.5rem]'>Về OCB</div>
+                </a>
+            </div>
+            <div class='flex items-center shrink-0'>
+                <form class='flex items-center justify-center'>
+                    <input
+                            class='rounded-[0.4rem] w-[38rem] h-[3rem] mr-2 flex items-center pl-2 text-black outline-none max-[1280px]:w-[18rem]'
+                            ref={searchRef}
+                            type='text'
+                            placeholder='Tôi muốn...'
+
+                    />
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass -translate-x-14 text-[18px] text-black pl-3 border-l-2"></i>
+                    </button>
+                </form>
+
+                <a href='#' class='hover:text-orange-400'>
+                    <div class='ml-2 mr-[1.5rem]'>Dịch vụ CSKH 24/7</div>
+                </a>
+                <div class='mr-[1.5rem] text-[16px]'>|</div>
+                <a href='#'  class='flex hover:text-orange-400'>
+                    <i class="fa-solid fa-location-dot mr-[0.5rem] flex items-center"></i>
+                    <div class='ml-2 mr-2'>Chi nhánh & ATM/CDM</div>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

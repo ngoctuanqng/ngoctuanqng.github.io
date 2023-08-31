@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <body>
+        <div th:fragment="notification" class='bg-[#F8F8F8]'>
+            <div class='flex items-center justify-between mx-[90px] text-[15px] font-semibold py-[2.5rem] border-b-[0.1rem]  max-[1300px]:flex-col max-[1300px]:text-[1.9rem] max-[1300px]:mx-[3rem]'>
+                <div class='flex items-center max-[1300px]:flex-col max-[1300px]:w-full'>
+                    <p class='mr-[20px] max-[1300px]:mb-[2.5rem] max-[1300px]:text-center'>Đăng ký nhận thông tin từ OCB</p>
+                    <form class="max-[1300px]:flex max-[1300px]:w-full justify-center items-center max-[1300px]:mb-[2.5rem]">
+                        <input
+                                type='text'
+                                placeholder='Email của bạn...'
+                                class='bg-white w-[320px] h-[38px] rounded-md px-2 border-[0.2rem] max-[1300px]:w-full'
+                        />
+                        <button class='w-[100px] h-[28px] -translate-x-[110px] bg-[#008C44] rounded-md font-medium text-white'>
+                            Đăng ký
+                        </button>
+                    </form>
+                </div>
+                <div class='flex items-center max-[1300px]:flex-col'>
+                    <p class='mr-[25px] max-[1300px]:mr-0 max-[1300px]:text-center max-[1300px]:mb-[2.5rem]'>Cài đặt ứng dụng OCB OMNI</p>
+                    <div class='flex items-center justify-center'>
+                        <img src='https://ocb.com.vn/assets/images/button/appstore.png' class='w-[100px] h-[30px] mr-[15px]'/>
+                        <img src='https://ocb.com.vn/assets/images/button/googleplay.png' class='w-[100px] h-[30px]'/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

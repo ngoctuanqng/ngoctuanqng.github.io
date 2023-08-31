@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/output.css" th:href="@{/css/output.css}">
+</head>
+<body>
+<div class="flex justify-center items-center border-2 text-[1.5rem] h-[100vh] overflow-y-auto">
+    <div class="flex flex-col items-start h-[45rem] w-[50rem] max-[320px]:w-[28rem]">
+        <h2 class="bg-[#1732B8] w-full h-[5rem] flex items-center pl-[1rem] rounded-t-[1rem] text-white">Transaction History</h2>
+        <div th:unless="${transactionHistory}">
+            <p>Lịch sử giao dịch trống</p>
+        </div>
+        <div th:if="${transactionHistory}" class="w-full">
+            <ul class="bg-blue-300 w-full">
+                <li th:each="transaction:${transactionHistory}" class="py-[1rem] w-full border-2 px-[1rem] border-red-500">
+                    <p class="border-2">Mã giao dịch: <span th:text="${transaction.id}"></span></p>
+                    <p class="border-2">Loại giao dịch: <span th:text="${transaction.TransactionCategory}"></span></p>
+                    <p class="border-2">Số lượng giao dịch: <span th:text="${transaction.amount}"></span></p>
+                    <p class="border-2">Thời gian giao dịch: <span th:text="${transaction.time}"></span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

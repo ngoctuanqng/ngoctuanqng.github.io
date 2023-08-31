@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/output.css" th:href="@{/css/output.css}">
+    <title>List Users</title>
+</head>
+
+<body>
+
+<h2 class="font-medium mx-auto mt-[3rem] mb-[3rem] ml-[13rem] uppercase">List of users</h2>
+
+<hr>
+
+<div class="flex justify-center items-center w-full h-full mt-[3rem]">
+    <table class="border-[0.3rem] border-collapse text-left">
+        <thead class="bg-[#212529] text-white border-[0.3rem] text-[2rem] pl-[1rem]">
+            <th class="w-[10rem] h-[4rem] border-[0.3rem] pl-[1rem]">Id</th>
+            <th class="w-[20rem] h-[4rem] border-[0.3rem] pl-[1rem]">UserName</th>
+            <th class="w-[20rem] h-[4rem] border-[0.3rem] pl-[1rem]">Authority</th>
+            <th class="w-[20rem] h-[4rem] border-[0.3rem] pl-[1rem]">Full Name</th>
+            <th class="w-[20rem] h-[4rem] border-[0.3rem] pl-[1rem]">Phone Number</th>
+            <th class="w-[20rem] h-[4rem] border-[0.3rem] pl-[1rem]">Action</th>
+        </thead>
+        <tbody th:each="user : ${users}" class="even:bg-[#F2F2F1] text-[1.4rem]">
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem]"><span th:text="${user.id}"></span></td>
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem]"><span th:text="${user.userName}"></span></td>
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem]"><span th:text="${user.authority}"></span></td>
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem]"><span th:text="${user.fullName}"></span></td>
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem]"><span th:text="${user.phoneNumber}"></span></td>
+            <td class="h-[4rem] border-[0.3rem] pl-[1rem] flex items-center justify-around">
+                <form action="#" th:action="@{/user/showUpdateUserForm}" method="POST" class="bg-[#31D2F2] rounded-md w-[6rem] h-[2.8rem] flex justify-center items-center">
+                    <input type="hidden" name="id" th:value="${user.id}">
+                    <input type="hidden" name="userName" th:value="${user.userName}">
+                    <input type="hidden" name="password" th:value="${user.password}">
+                    <input type="hidden" name="authority" th:value="${user.authority}">
+                    <input type="hidden" name="fullName" th:value="${user.fullName}">
+                    <input type="hidden" name="phoneNumber" th:value="${user.phoneNumber}">
+                    <button type="submit" class="w-full h-full">Update</button>
+                </form>
+                <form action="#" th:action="@{/user/delete}" method="POST" class="bg-[#31D2F2] rounded-md w-[6rem] h-[2.8rem] flex justify-center items-center">
+                    <input type="hidden" name="user.id" th:value="${user.id}">
+                    <button type="submit" class="w-full h-full"
+                        onclick="if (confirm('Are you sure want to delete user?')) return true">Delete
+                    </button>
+                </form>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
+
+

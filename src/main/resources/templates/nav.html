@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="..\static\css\output.css">
+</head>
+<body>
+    <div th:fragment="nav">
+
+        <!-- Desktop-Nav -->
+        <div class='max-[1025px]:hidden flex h-[7rem] py-[2rem] items-center justify-between relative bg-white px-[3rem] text-[1.5rem] font-[600] border-b-2 border-gray w-full'>
+            <div class='flex items-center'>
+                <a href='#' class='mr-5'>
+                    <img class='w-[10rem] h-[3.2rem]' src='https://ocb.com.vn/assets/images/logo/ocb-logo-full.svg' />
+                </a>
+                <a href='#' class='personal mx-2 max-[1024px]:hidden'>
+                    <p class='uppercase hover:text-[#E8B87F]'>Cá nhân</p>
+                    <div class='personal-suggestion'>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211018150333_TietKiem.png" class="mr-4 w-20"></img>
+                            <p>Tiết kiệm</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211214153925_icon-comb.png" class="mr-4 w-20"></img>
+                            <p>Com-B</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010170859_Tai%20khoan%20online%201.png" class="mr-4 w-20"></img>
+                            <p>Tài khoản</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010171116_The.png" class="mr-4 w-20"></img>
+                            <p>Thẻ</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010171044_TienVay.png" class="mr-4 w-20"></img>
+                            <p>Tiền vay</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010171033_BaoHiem.png" class="mr-4 w-20"></img>
+                            <p>Bảo hiểm</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211011221121_Uu%20Dai.png" class="mr-4 w-20"></img>
+                            <p>Ưu đãi</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211026163956_OMNI.png" class="mr-4 w-20"></img>
+                            <p>OMNI cá nhân</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20220927100600_logo-lock-02.png" class="mr-4 w-20"></img>
+                            <p>Unlock Dream Home</p>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' class='business mx-2 max-[1024px]:hidden'>
+                    <p class='uppercase hover:text-[#E8B87F]'>Doanh nghiệp</p>
+                    <div class='business-suggestion'>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172237_Giai%20Phap%20Thanh%20Toan.png" class="mr-4 w-20"></img>
+                            <p>Giải pháp thanh toán</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211018203248_Tien%20Gui.png" class="mr-4 w-20"></img>
+                            <p>Tiền gửi</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172124_Tin%20Dung.png" class="mr-4 w-20"></img>
+                            <p>Tín dụng</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172107_Tai%20Tro%20Nganh.png" class="mr-4 w-20"></img>
+                            <p>Chuỗi cung ứng và ngành</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172049_Bao%20Lanh.png" class="mr-4 w-20"></img>
+                            <p>Bảo lãnh ngân hàng</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172039_Tai%20Tro%20Thuong%20Mai.png" class="mr-4 w-20"></img>
+                            <p>Tài trợ thương mại</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172024_Thanh%20Toan%20Quoc%20Te.png" class="mr-4 w-20"></img>
+                            <p>Thanh toán quốc tế</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010172005_Ngoai%20Hoi%20Phai%20Sinh.png" class="mr-4 w-20"></img>
+                            <p>Ngoại hối và phát sinh</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010171942_Ngan%20Hang%20Dau%20Tu.png" class="mr-4 w-20"></img>
+                            <p>Ngân hàng đầu tư</p>
+                        </div>
+                        <div class="flex items-center justify-start py-10">
+                            <img src="https://webocb-api.ocb.com.vn/Resources/Images/20211010171928_Uu%20Dai.png" class="mr-4 w-20"></img>
+                            <p>Chương trình ưu đãi</p>
+                        </div>
+                    </div>
+                </a>
+                <a href='#' class='mx-2 max-[1024px]:hidden'>
+                    <p class='uppercase hover:text-[#E8B87F]'>Ngân hàng ưu tiên</p>
+                </a>
+                <a href='#' class='mx-2 hover:text-[#E8B87F] max-[1024px]:hidden'>
+                    <p class='uppercase hover:text-[#E8B87F]'>Nhà đầu tư</p>
+                </a>
+            </div>
+            <div class="flex items-center">
+                <div href='#' class="register max-[1024px]:hidden">
+                    <i class="fa-solid fa-user-plus mx-2 opacity-80 hover:opacity-100 hover:text-[#E8B87F] cursor-pointer"></i>
+                    <div class='register-suggestion'>
+                        <a th:href="@{/findByUserLoggedIn}" href="#" class="flex items-center justify-start pt-10 pb-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Thông tin tài khoản</p>
+                        </a>
+                        <a th:href="@{/showTransferPage}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Chuyển tiền ngân hàng</p>
+                        </a>
+                        <a th:href="@{/showPaymentPage}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Thanh toán hóa đơn</p>
+                        </a>
+                        <a th:href="@{/showTransactionHistory}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Lịch sử giao dịch</p>
+                        </a>
+                        <a th:href="@{/showChangingPassword}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Đổi mật khẩu</p>
+                        </a>
+                    </div>
+                </div>
+                <div class='w-50 ml-2 rounded-[1rem] border-2 flex flex-col items-center login max-[1024px]:hidden'>
+                    <div class="uppercase px-[0.5rem] py-[0.5rem] bg-[#003366] rounded-[1rem] text-white hover:text-[#E8B87F]" sec:authorize="isAuthenticated()">
+                        <a href="/logout">Đăng xuất tài khoản</a>
+                    </div>
+
+                    <div class="uppercase px-[0.5rem] py-[0.5rem] bg-green-600 text-white rounded-[1rem] hover:text-[#E8B87F]" sec:authorize="!isAuthenticated()">
+                        <a th:href="@{/showMyLoginPage}">Đăng nhập tài khoản</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        
+
+        <!-- Mobi-Nav -->
+        <div class="min-[1024px]:hidden flex h-[7rem] py-[2rem] items-center justify-between relative bg-white px-[3rem] text-[1.1rem] font-[600] border-b-2 border-gray w-full">
+            <div class="shrink-0">
+                <a href='#'>
+                    <img class='w-[10rem] h-[3.2rem]' src='https://ocb.com.vn/assets/images/logo/ocb-logo-full.svg' />
+                </a>
+            </div>
+            <div class="shrink-0">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass text-[2.5rem] text-green-700 mr-[0.8rem]"></i> 
+                </button>           
+
+                <button
+                onclick="document.getElementById('navigation').style.display = 'block'"
+                >
+                    <i class="fa-solid fa-bars text-[2.5rem] text-green-700"></i>
+                </button>
+            </div>
+
+            <div id="navigation" class="fixed right-0 top-0 flex flex-col h-full w-[60vw] bg-[#bcbbba] overflow-y-auto">
+                <div class="flex items-center justify-end px-[2rem] py-[1.3rem] border-b-[0.05rem] text-[2rem] mx-[2rem]" href="#">
+                    <button
+                    class="hover:text-[#E8B87F]"
+                    onclick="document.getElementById('navigation').style.display = 'none'"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <a th:href="@{/findByUserLoggedIn}" class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Thông tin tài khoản</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a th:href="@{/showTransferPage}" class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Chuyển tiền ngân hàng</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a th:href="@{/showPaymentPage}" class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Thanh toán hóa đơn</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a th:href="@{/showTransactionHistory}" class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Lịch sử giao dịch</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a th:href="@{/showChangingPassword}" class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Đổi mật khẩu</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Cá nhân</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Doanh nghiệp</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Ngân hàng ưu tiên</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Nhà đầu tư</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Về OCB</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
+                    <p class='uppercase'>Tin tức và sự kiện</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Cơ hội nghề nghiệp</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem] border-collapse" href="#">
+                    <p class='uppercase'>Công cụ và tiện ích</p>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="mobi-navigation.js"></script>
+</body>
+</html>

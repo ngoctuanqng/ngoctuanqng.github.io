@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/output.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-center items-center w-[100vw] h-[100vh]">
+        <div class="w-[35rem] h-[45rem]">
+            <h2 class="bg-[#1732B8] h-[5rem] px-[2rem] flex justify-self-start items-center text-[2rem] text-white rounded-t-[1.5rem]">
+                Sign In
+            </h2>
+            <div class="w-full h-[40rem] px-[2rem] text-[2rem] flex flex-col justify-around bg-green-300 rounded-b-[1.5rem] border-[black]">
+                <!-- Login Form -->
+                <form action="#" th:action="@{/authenticateTheUser}"
+                    method="POST" class="flex flex-col justify-between h-[20rem]">
+                    <!-- Place for messages: error, alert etc ... -->
+                    <div>
+                        <!-- Check for login error -->
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                Invalid username and password.
+                            </div>
+                        </div>
+                        <!-- Check for logout -->
+                        <div th:if="${param.logout}">
+                            <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                You have been logged out.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User name -->
+                    <div>
+                        <input type="text" name="username" placeholder="username..." class="border-[0.2rem] pl-[1.5rem]">
+                    </div>
+                    <!-- Password -->
+                    <div>
+                        <input type="password" name="password" placeholder="password..." class="border-[0.2rem] pl-[1.5rem]">
+                    </div>
+                    <!-- Login/Submit Button -->
+                    <button type="submit" class="rounded-[0.6rem] w-[8rem] text-white bg-red-700 hover:text-yellow-400">Login</button>
+                </form>
+                <a th:href="@{/showSignUpPage}" class="text-black hover:text-yellow-400 hover:underline">Bạn chưa có tài khoản? Click vào đây để đăng ký</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

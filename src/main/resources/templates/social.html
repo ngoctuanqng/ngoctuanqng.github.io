@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment="social" class='flex items-center py-[2.5rem] mx-[90px] text-[1.5rem] justify-between max-[1020px]:flex-col'>
+        <div class='flex items-center max-[1020px]:mb-[2.5rem] max-[1020px]:text-[2rem] max-[1020px]:text-center'>
+            <img src='https://ocb.com.vn/assets/images/logo/ocb-logo-full.svg' class='w-[10rem] h-[3rem] mr-[6rem] max-[1020px]:hidden'/>
+            <a href='#' class='flex hover:text-orange-400'>
+                <i class="fa-solid fa-location-dot flex items-center"></i>
+                <div class='ml-2 mr-2 text-[#9DC7BA]'>Chi nhánh & ATM/CDM</div>
+            </a>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook text-[3rem] mr-[1.5rem]"></i>
+            <i class="fa-brands fa-instagram text-[3rem] mr-[1.5rem]"></i>
+            <i class="fa-brands fa-youtube text-[3rem]"></i>
+        </div>
+    </div>
+</body>
+</html>

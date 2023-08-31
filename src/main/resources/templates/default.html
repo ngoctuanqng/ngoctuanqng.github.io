@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div>
+        <div th:replace="~{header :: header}"></div>
+        <div th:replace="~{nav :: nav}"></div>
+        <div th:replace="~{personal :: personal}"></div>
+        <div th:replace="~{body :: body}"></div>
+        <div th:replace="~{notification :: notification}"></div>
+        <div th:replace="~{social :: social}"></div>
+        <div th:replace="~{footer :: footer}"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div th:fragment="header" class="px-12 py-3 flex items-center justify-between bg-[#008C44] text-white text-[1.5rem] h-[40px] w-full">-->
+<!--        <div class='flex items-center'>-->
+<!--            <a href='#' class='hover:text-orange-400'>-->
+<!--                <div class='mr-[1.5rem]'>Tin tức - Sự kiện</div>-->
+<!--            </a>-->
+<!--            <div class='mr-[1.5rem] text-[16px]'>|</div>-->
+<!--            <a href='#' class='hover:text-orange-400'>-->
+<!--                <div class='mr-[1.5rem]'>Cơ hội và nghề nghiệp</div>-->
+<!--            </a>-->
+<!--            <div class='mr-[1.5rem] text-[16px]'>|</div>-->
+<!--            <a href='#' class='hover:text-orange-400'>-->
+<!--                <div class='mr-[1.5rem]'>Về OCB</div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class='flex items-center'>-->
+<!--            <form class='flex items-center justify-center'>-->
+<!--                <input-->
+<!--                        class='rounded-[0.4rem] w-[38rem] h-[3rem] mr-2 flex items-center pl-2 text-black outline-none'-->
+<!--                        ref={searchRef}-->
+<!--                        type='text'-->
+<!--                        placeholder='Tôi muốn...'-->
+<!--                        value={searchValue}-->
+<!--                />-->
+<!--                <button>-->
+<!--                    <i class="fa-solid fa-magnifying-glass -translate-x-14 text-[18px] text-black pl-3 border-l-2"></i>-->
+<!--                </button>-->
+<!--            </form>-->
+
+
+
+<!--            <a href='#' class='hover:text-orange-400'>-->
+<!--                <div class='ml-2 mr-[1.5rem]'>Dịch vụ CSKH 24/7</div>-->
+<!--            </a>-->
+<!--            <div class='mr-[1.5rem] text-[16px]'>|</div>-->
+<!--            <a href='#'  class='flex hover:text-orange-400'>-->
+<!--                <i class="fa-solid fa-location-dot mr-[0.5rem] flex items-center"></i>-->
+<!--                <div class='ml-2 mr-2'>Chi nhánh & ATM/CDM</div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->

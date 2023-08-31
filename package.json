@@ -1,0 +1,14 @@
+{
+  "name": "banking",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwind build -i src/input.css -o src/main/resources/static/css/output.css"
+  },
+  "author": "Tuan",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
