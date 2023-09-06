@@ -39,18 +39,23 @@ public class SecurityConfig {
        http.authorizeHttpRequests(configurer ->
                configurer
                        .requestMatchers("/").permitAll()
-//                       .requestMatchers("/**").permitAll()
+//                     .requestMatchers("/**").permitAll()
                        .requestMatchers("/css/**").permitAll()
+                       .requestMatchers("/js/**").permitAll()
+                       .requestMatchers("/img/**").permitAll()
                        .requestMatchers("/showSignUpPage").permitAll()
-                       .requestMatchers(HttpMethod.GET, "/showInfoPage").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.GET, "/findByUserLoggedIn").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.GET, "/showTransferPage").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.POST, "/user/transferMoney").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.GET, "/showPaymentPage").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.POST, "/user/payTheBill").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.GET, "/showChangingPassword").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.POST, "/user/changePassword").hasAnyRole("USER", "MANAGER", "ADMIN")
-                       .requestMatchers(HttpMethod.GET, "/showTransactionHistory").hasAnyRole("USER", "MANAGER", "ADMIN")
+                       .requestMatchers("/subscribe").permitAll()
+                       .requestMatchers("/user/signUpToken").permitAll()
+                       .requestMatchers("/signUpTokenConfirm").permitAll()
+                       .requestMatchers(HttpMethod.GET, "/showInfoPage").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.GET, "/findByUserLoggedIn").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.GET, "/showTransferPage").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.POST, "/user/transferMoney").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.GET, "/showPaymentPage").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.POST, "/user/payTheBill").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.GET, "/showChangingPassword").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.POST, "/user/changePassword").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
+                       .requestMatchers(HttpMethod.GET, "/showTransactionHistory").hasAnyRole("USER", "EMPLOYEE", "MANAGER", "ADMIN")
                        .requestMatchers(HttpMethod.GET, "/admin/listOfUsers").hasRole("ADMIN")
 
 
@@ -77,6 +82,9 @@ public class SecurityConfig {
                        .requestMatchers(HttpMethod.GET, "/user/delete/**").hasAnyRole("ADMIN", "MANAGER")
                        .requestMatchers(HttpMethod.PUT, "/user/delete/**").hasAnyRole("ADMIN", "MANAGER")
                        .requestMatchers(HttpMethod.POST, "/user/delete/**").hasAnyRole("ADMIN", "MANAGER")
+                       .requestMatchers(HttpMethod.POST, "/user/showUpdateUserForm").hasAnyRole("ADMIN", "MANAGER")
+                       .requestMatchers(HttpMethod.POST, "/user/update").hasAnyRole("ADMIN", "MANAGER")
+
                )
                .formLogin(form ->
                        form

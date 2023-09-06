@@ -11,7 +11,7 @@
 <body>
 <div class="flex justify-center items-center border-2 text-[1.5rem] h-[100vh]">
     <div class="flex flex-col items-start h-[45rem] w-[50rem] max-[520px]:text-[1.8rem]">
-        <h2 class="bg-[#1732B8] w-full h-[5rem] flex items-center pl-[1rem] rounded-t-[1rem] text-white">Payment</h2>
+        <h2 class="bg-[#1732B8] w-full h-[5rem] flex items-center pl-[1rem] rounded-t-[1rem] text-white">Thanh toán hóa đơn</h2>
         <form action="#" th:action="@{/user/payTheBill}" method="POST" class="flex flex-col justify-around items-start py-[3rem] h-full pl-[1rem] bg-green-300 w-full rounded-b-[1rem]">
             <div th:if="${notCorrectPassword}">
                 <p th:text="${notCorrectPassword}" class="text-[2.2rem] text-yellow-400 uppercase text-center"></p>

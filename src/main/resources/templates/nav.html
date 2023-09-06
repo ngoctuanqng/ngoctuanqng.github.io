@@ -13,7 +13,7 @@
         <div class='max-[1025px]:hidden flex h-[7rem] py-[2rem] items-center justify-between relative bg-white px-[3rem] text-[1.5rem] font-[600] border-b-2 border-gray w-full'>
             <div class='flex items-center'>
                 <a href='#' class='mr-5'>
-                    <img class='w-[10rem] h-[3.2rem]' src='https://ocb.com.vn/assets/images/logo/ocb-logo-full.svg' />
+                    <i class="fa-solid fa-house text-[2rem]"></i>
                 </a>
                 <a href='#' class='personal mx-2 max-[1024px]:hidden'>
                     <p class='uppercase hover:text-[#E8B87F]'>Cá nhân</p>
@@ -112,7 +112,7 @@
                 <div href='#' class="register max-[1024px]:hidden">
                     <i class="fa-solid fa-user-plus mx-2 opacity-80 hover:opacity-100 hover:text-[#E8B87F] cursor-pointer"></i>
                     <div class='register-suggestion'>
-                        <a th:href="@{/findByUserLoggedIn}" href="#" class="flex items-center justify-start pt-10 pb-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                        <a th:href="@{/findByUserLoggedIn}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
                             <p>Thông tin tài khoản</p>
                         </a>
                         <a th:href="@{/showTransferPage}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
@@ -127,16 +127,19 @@
                         <a th:href="@{/showChangingPassword}" href="#" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
                             <p>Đổi mật khẩu</p>
                         </a>
+                        <a th:href="@{/admin/listOfUsers}" th:if="${#authorization.expression('hasRole(''ADMIN'')')}" class="flex items-center justify-start py-5 px-5 border-b-2 hover:bg-[#E4EBF2]">
+                            <p>Danh sách người dùng</p>
+                        </a>
                     </div>
                 </div>
                 <div class='w-50 ml-2 rounded-[1rem] border-2 flex flex-col items-center login max-[1024px]:hidden'>
-                    <div class="uppercase px-[0.5rem] py-[0.5rem] bg-[#003366] rounded-[1rem] text-white hover:text-[#E8B87F]" sec:authorize="isAuthenticated()">
-                        <a href="/logout">Đăng xuất tài khoản</a>
-                    </div>
+                    <a href="/logout" class="uppercase px-[0.5rem] py-[0.5rem] bg-[#003366] rounded-[1rem] text-white hover:text-[#E8B87F]" sec:authorize="isAuthenticated()">
+                        Đăng xuất tài khoản
+                    </a>
 
-                    <div class="uppercase px-[0.5rem] py-[0.5rem] bg-green-600 text-white rounded-[1rem] hover:text-[#E8B87F]" sec:authorize="!isAuthenticated()">
-                        <a th:href="@{/showMyLoginPage}">Đăng nhập tài khoản</a>
-                    </div>
+                    <a th:href="@{/showMyLoginPage}" class="uppercase px-[0.5rem] py-[0.5rem] bg-green-600 text-white rounded-[1rem] hover:text-[#E8B87F]" sec:authorize="!isAuthenticated()">
+                        Đăng nhập tài khoản
+                    </a>
                 </div>
 
 
@@ -148,7 +151,7 @@
         <div class="min-[1024px]:hidden flex h-[7rem] py-[2rem] items-center justify-between relative bg-white px-[3rem] text-[1.1rem] font-[600] border-b-2 border-gray w-full">
             <div class="shrink-0">
                 <a href='#'>
-                    <img class='w-[10rem] h-[3.2rem]' src='https://ocb.com.vn/assets/images/logo/ocb-logo-full.svg' />
+                    <i class="fa-solid fa-house text-[2rem]"></i>
                 </a>
             </div>
             <div class="shrink-0">
@@ -163,7 +166,7 @@
                 </button>
             </div>
 
-            <div id="navigation" class="fixed right-0 top-0 flex flex-col h-full w-[60vw] bg-[#bcbbba] overflow-y-auto">
+            <div id="navigation" class="fixed right-0 top-0 flex flex-col h-full invisible w-[60vw] bg-[#bcbbba] overflow-y-auto" style="display: none;">
                 <div class="flex items-center justify-end px-[2rem] py-[1.3rem] border-b-[0.05rem] text-[2rem] mx-[2rem]" href="#">
                     <button
                     class="hover:text-[#E8B87F]"
@@ -209,7 +212,7 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
                 <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">
-                    <p class='uppercase'>Về OCB</p>
+                    <p class='uppercase'>Về ngân hàng</p>
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
                 <a class="flex items-center justify-between px-[2rem] py-[1.8rem] border-b-[0.05rem] hover:text-[#E8B87F] mx-[2rem]" href="#">

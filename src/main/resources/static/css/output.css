@@ -830,10 +830,6 @@ html {
   margin-right: 4rem;
 }
 
-.mr-\[6rem\] {
-  margin-right: 6rem;
-}
-
 .mt-\[3rem\] {
   margin-top: 3rem;
 }
@@ -1355,10 +1351,6 @@ html {
   padding-bottom: 3rem;
 }
 
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1373,10 +1365,6 @@ html {
 
 .pl-\[1rem\] {
   padding-left: 1rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .text-left {

@@ -1,6 +1,7 @@
 package com.example.springbackend.controller;
 
 import com.example.springbackend.entity.UserInfo;
+import com.example.springbackend.service.EmailConfirmationService;
 import com.example.springbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

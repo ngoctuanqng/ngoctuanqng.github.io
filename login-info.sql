@@ -5,6 +5,8 @@ DROP TABLE IF EXISTS `banking_card`;
 DROP TABLE IF EXISTS `transaction_history`;
 DROP TABLE IF EXISTS `account_card_response`;
 DROP TABLE IF EXISTS `user_info`;
+DROP TABLE IF EXISTS `email_subscription`;
+DROP TABLE IF EXISTS `email_token`;
 
 
 CREATE TABLE `user_info` (
@@ -21,7 +23,8 @@ CREATE TABLE `user_info` (
 INSERT INTO `user_info` VALUES
  (1, 'admin','{bcrypt}$2a$10$B0e1wQdHMzQSqPV/Zgvf7Oz8qp/a6w6hprA6G1mxERZP.7WC0YBau', 'ROLE_ADMIN', true,'Nguyen Van A',123),
  (2, 'manager','{bcrypt}$2a$10$W8712PS5DQVBiRafqjmw9uOZU8r7dA9B35tbVWbbraNnXy7OCxpQi', 'ROLE_MANAGER', true,'Nguyen Van B',234),
- (3, 'user','{bcrypt}$2a$10$YwxJiCmsgOdqiqkOLmeB5.dEc/pIUIu1J/CWLTbh19/6ldic5UoKa', 'ROLE_USER', true, 'Nguyen Van C',345);
+ (3, 'employee','{bcrypt}$2a$10$DBkZ8UkgVqmqwCprzpLdVeR.KDCVQb4YC2RUuelIqQse2b2B88BQy', 'ROLE_EMPLOYEE', true, 'Nguyen Van C',345),
+ (4, 'user','{bcrypt}$2a$10$YwxJiCmsgOdqiqkOLmeB5.dEc/pIUIu1J/CWLTbh19/6ldic5UoKa', 'ROLE_USER', true, 'Nguyen Van D',456);
 
 
 CREATE TABLE `banking_card` (
@@ -72,4 +75,23 @@ INSERT INTO `banking_account` VALUES
  (1, 1000, 1, 1),
  (2, 1000, 2, 2),
  (3, 1000, 3, 3);
+ 
+CREATE TABLE `email_subscription` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(50) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+INSERT INTO `email_subscription` VALUES
+ (1, "user1@gmail.com"),
+ (2, "user2@gmail.com"),
+ (3, "user3@gmail.com");
+
+CREATE TABLE `email_token` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(50) DEFAULT NULL,
+    `token` varchar(50) DEFAULT NULL,
+    `confirmed` boolean DEFAULT FALSE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

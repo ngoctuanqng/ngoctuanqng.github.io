@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/output.css" th:href="@{/css/output.css}">
+</head>
+<body>
+<div class="flex justify-center items-center border-2 text-[1.5rem] h-[100vh]">
+    <div class="flex flex-col items-start h-[45rem] w-[50rem] max-[520px]:w-[100vw]">
+        <h2 class="bg-[#1732B8] w-full h-[5rem] flex items-center pl-[1rem] rounded-t-[1rem] text-white max-[520px]:leading-[5rem]">Xác thực</h2>
+        <form action="#" th:action="@{/signUpTokenConfirm}" th:object="${user}" method="POST" class="flex flex-col justify-around items-start py-[3rem] h-full pl-[1rem] bg-green-300 w-full rounded-b-[1rem]">
+            <div th:if="${notMatchToken}" class="text-[2.2rem] text-blue-900 uppercase text-center">
+                <p th:text="${notMatchToken}"></p>
+            </div>
+
+            <input type="hidden" id="userName" name="userName" th:field="*{userName}" th:value="${userInfo.userName}">
+            <input type="hidden" id="password" name="password" th:field="*{password}" th:value="${userInfo.password}">
+            <input type="hidden" id="fullName" name="fullName" th:field="*{fullName}" th:value="${userInfo.fullName}">
+            <input type="hidden" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" th:value="${userInfo.phoneNumber}">
+
+            <div class="flex max-[520px]:flex-col">
+                <label for="token" class="min-w-[22rem] text-[1.8rem]">Nhập mã Token:</label>
+                <input type="text" id="token" name="token" placeholder="Nhập mã Token..." required class="flex items-center w-[23rem] h-[3.5rem]  pl-[1rem] max-[520px]:pr-[1rem] max-[520px]:text-[2rem] max-[520px]:h-[4rem] max-[520px]:w-[30rem]"><br>
+            </div>
+
+            <button class="bg-red-700 rounded-md text-[2.2rem] w-[10rem] text-white hover:text-yellow-400" type="submit">Gửi</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
